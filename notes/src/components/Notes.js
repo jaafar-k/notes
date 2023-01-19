@@ -16,8 +16,10 @@ import Typography from '@mui/material/Typography';
 import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useState } from 'react'
+
+
 function generate(element) {
-  return [0, 1, 2].map((value) =>
+  return [0].map((value) =>
     React.cloneElement(element, {
       key: value,
     }),
@@ -28,12 +30,14 @@ const Demo = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
 }));
 
+
+
 export default function Notes() {
   const [dense, setDense] = useState(false);
   const [secondary, setSecondary] = useState(false);
 
   return (
-    <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+    <Box sx={{ flexGrow: 2, maxWidth: 752 }}>
       <FormGroup row>
         <FormControlLabel
           control={
@@ -66,9 +70,15 @@ export default function Notes() {
                   <ListItemText
                     primary="HTML is easy"
                     secondary={secondary ? 'Secondary text' : null}
-                  />
+                    />
+                    <ListItemText primary="css is easy"
+                 secondary={secondary ? 'Secondary text' : null}/>
+                  
+                  
                 </ListItem>,
-               
+                
+                 
+              
               )}
             </List>
           </Demo>
