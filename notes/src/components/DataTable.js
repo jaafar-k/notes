@@ -1,5 +1,6 @@
 import React from "react";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGridPro } from '@mui/x-data-grid-pro';
+import { useDemoData } from '@mui/x-data-grid-generator';
 import { useEffect, useState} from "react";
 
   
@@ -12,6 +13,11 @@ const columns = [
 const userTableStyles = {
   height: '650px',
 };
+const { data } = useDemoData({
+  dataSet: 'Commodity',
+  rowLength: 100000,
+  editable: true,
+});
 export default function DataTable(){
     const [user, setUser] = useState([]);
     useEffect(() => 
@@ -22,14 +28,22 @@ export default function DataTable(){
        
        
     }, [])
-
+    
+    const { data } = useDemoData({
+      dataSet: 'Commodity',
+      rowLength: 100000,
+      editable: true,
+    });
     return (
         <div style={{ height: 300, width: '50%' }}>
-          <DataGrid    
+          <DataGridPro    
             rows={user}
             columns={columns}
             loading={!user.length}
-            sx={userTableStyles} />
+            sx={userTableStyles}
+            checkboxSelection
+            disableSelectionOnClick
+            experimentalFeatures={{ newEditingApi: true }} />
         </div>
       );
 }
