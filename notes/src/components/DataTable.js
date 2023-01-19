@@ -13,11 +13,7 @@ const columns = [
 const userTableStyles = {
   height: '650px',
 };
-const { data } = useDemoData({
-  dataSet: 'Commodity',
-  rowLength: 100000,
-  editable: true,
-});
+
 export default function DataTable(){
     const [user, setUser] = useState([]);
     useEffect(() => 
@@ -36,7 +32,8 @@ export default function DataTable(){
     });
     return (
         <div style={{ height: 300, width: '50%' }}>
-          <DataGridPro    
+          <DataGridPro  
+          {...data}  
             rows={user}
             columns={columns}
             loading={!user.length}
