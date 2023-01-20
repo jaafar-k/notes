@@ -9,14 +9,14 @@ import Data from './components/Data';
 
 function App() {
   return (
-   <div>
- <Create/> <br></br>
- <Radio/> <br></br>
- <Notes/> <br></br>
- <Lists/> <br></br>
-<DataTable/> <br></br>
-<Data/>
-   </div>
+    <div>
+      {/*<Create /> <br></br>
+      <Radio /> <br></br>
+      <Notes /> <br></br> */}
+      <Lists /> <br></br>
+      {/* <DataTable/> <br></br>
+<Data/> */}
+    </div>
   );
 }
 
